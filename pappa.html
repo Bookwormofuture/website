@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LEKHITHA ARTS</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lora', serif;
+            background-color: #f4f4f4;
+            color: #333;
+            overflow-x: hidden;
+            font-size: 18px;
+        }
+
+        /* Header Styling */
+        header {
+            background: #0d0d0d;
+            color: #ffffff;
+            padding: 30px 0;
+            text-align: center;
+            position: relative;
+            font-family: 'Playfair Display', serif;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 48px;
+            letter-spacing: 2px;
+            color: #f5f5f5;
+        }
+
+        nav ul {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav a {
+            color: #ddd;
+            text-decoration: none;
+            font-size: 18px;
+            font-family: 'Montserrat', sans-serif;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #d4af37;
+        }
+
+        /* Main Section Styling */
+        section {
+            padding: 70px;
+            margin: 30px auto;
+            max-width: 1200px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        section h2 {
+            color: #333;
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        section p {
+            color: #555;
+            line-height: 1.6;
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+        }
+
+        /* Services Section */
+        .services {
+            display: flex;
+            justify-content: space-between;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .service-item {
+            flex-basis: 30%;
+            padding: 20px;
+            background: #fafafa;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .service-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-item h3 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .service-item p {
+            color: #666;
+            line-height: 1.5;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 10px 30px;
+            background-color: #d4af37;
+            color: white;
+            border-radius: 50px;
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            transition: background-color 0.3s, transform 0.3s;
+            margin-top: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn:hover {
+            background-color: #b89329;
+            transform: translateY(-5px);
+        }
+
+        /* Footer */
+        footer {
+            background: #0d0d0d;
+            color: #ccc;
+            padding: 40px 0;
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        footer p {
+            color: #999;
+        }
+
+        /* Subtle Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        section {
+            animation: fadeIn 1s ease-in-out forwards;
+        }
+
+        .paintbrush {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 120px;
+            height: 120px;
+            background: url('paintbrush-gold.png') no-repeat center center;
+            background-size: contain;
+            opacity: 0.8;
+            animation: paintMove 2s infinite alternate;
+            z-index: 999;
+        }
+
+        @keyframes paintMove {
+            from {
+                transform: translate(0, 0);
+            }
+            to {
+                transform: translate(15px, -15px);
+            }
+        }
+
+        /* Cursor Bubbles */
+        body {
+            cursor: url('invisible-cursor.png'), auto;
+        }
+
+        .bubble {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(212, 175, 55, 0.8);
+            pointer-events: none;
+            animation: pop 1.2s ease-out forwards, trail 2s ease forwards;
+        }
+
+        @keyframes pop {
+            0% {
+                transform: scale(0.5);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1.5);
+                opacity: 0;
+            }
+        }
+
+        @keyframes trail {
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-80px);
+                opacity: 0;
+            }
+        }
+
+        /* Cursor Bubble Colors */
+        .bubble:nth-child(odd) {
+            background: rgba(75, 79, 86, 0.8);
+        }
+
+        .bubble:nth-child(even) {
+            background: rgba(212, 175, 55, 0.8);
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Lekhitha Arts</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>
+           Hello! I am Bhaskar B Kidiyoor, a passionate artist and painter dedicated to creating beautiful and functional art pieces. With years of experience in various art forms, I take pride in my ability to transform ideas into stunning visual representations. 
+        </p>
+        <p>
+            My artistic journey began at a young age, and I have continually refined my skills in different mediums, from oil painting to digital art. I believe that art is not just a form of expression but also a means to connect with others. Each piece I create tells a story, reflecting the emotions and experiences I encounter in life.        
+        </p>
+<p>
+            I enjoy collaborating with clients to bring their visions to life, whether it’s through custom paintings, unique signage, or intricate engravings. My goal is to create art that resonates and makes an impact, enhancing the spaces and lives of those who experience it. 
+        </p>
+        <p>
+            Explore my portfolio to see my work and learn more about my services. I look forward to sharing my passion for art with you!
+        </p>
+
+    </section>
+<section id="skills">
+        <h2>My Skills</h2>
+        <p>
+            With a passion for creativity and a keen eye for detail, I specialize in a wide array of artistic services. My expertise includes creating stunning <strong>digital boards</strong>, eye-catching <strong>sign boards</strong>, and intricate <strong>computer sticker cuttings</strong>. I excel in crafting unique <strong>foam letters</strong>, vibrant <strong>cloth banners</strong>, and professional <strong>digital banners</strong> that elevate any space. My skills extend to <strong>granite engraving</strong>, designing <strong>front lite boards</strong>, and producing custom <strong>number plates</strong>. As an accomplished oil painter, I bring life to canvases and interiors with my <strong>interior arts</strong>. Furthermore, I offer services in <strong>screen/offset printing</strong>, <strong>rubber stamps</strong>, and creating detailed <strong>clay models</strong> and <strong>plaster arts</strong>. My craftsmanship includes <strong>plastic name boards</strong>, <strong>steel letters</strong>, and elegant <strong>brass name boards</strong>. Whether it's <strong>t-shirt printing</strong> or <strong>LED boards</strong>, I am dedicated to delivering exceptional quality and creativity in every project, ensuring that each piece resonates with beauty and purpose.
+        </p>
+    </section>
+
+
+    <section id="services">
+        <h2>Services</h2>
+        <div class="services">
+            <div class="service-item">
+                <h3>Custom Art Installations</h3>
+                <p>From indoor murals to public art projects, my custom installations bring spaces to life with elegance and creativity.</p>
+            </div>
+            <div class="service-item">
+                <h3>Personalized Paintings</h3>
+                <p>Each painting is crafted to tell a unique story, designed to fit perfectly into your space and taste.</p>
+            </div>
+            <div class="service-item">
+                <h3>Artistic Consultation</h3>
+                <p>Offering consultation to help you select the perfect art pieces or design concepts for your home or business.</p>
+            </div>
+        </div>
+        <a href="#contact" class="btn">Get in Touch</a>
+    </section>
+
+
+    <section id="services">
+    <h2>My Services</h2>
+    <div class="services">
+        <div class="service-item">Digital Board</div>
+        <div class="service-item">Sign Board</div>
+        <div class="service-item">Computer Sticker Cutting</div>
+        <div class="service-item">Foam Letters</div>
+        <div class="service-item">Cloth Banners</div>
+        <div class="service-item">Digital Banners</div>
+        <div class="service-item">Granite Engraving</div>
+        <div class="service-item">Front Lite Board</div>
+        <div class="service-item">Number Plate</div>
+        <div class="service-item">Oil Painting</div>
+        <div class="service-item">Interior Arts</div>
+        <div class="service-item">Screen/Offset Printing</div>
+        <div class="service-item">Rubber Stamps</div>
+        <div class="service-item">Clay Model</div>
+        <div class="service-item">Plaster Arts</div>
+        <div class="service-item">Plastic Name Board</div>
+        <div class="service-item">Steel Letters</div>
+        <div class="service-item">Steel Name Board</div>
+        <div class="service-item">Sun Control Film</div>
+        <div class="service-item">Brass Name Board</div>
+        <div class="service-item">Student Tag</div>
+        <div class="service-item">T-Shirt Printing</div>
+        <div class="service-item">TIN Board</div>
+        <div class="service-item">Metallic Board</div>
+        <div class="service-item">Acrylic Board</div>
+        <div class="service-item">LED Board</div>
+        <div class="service-item">All Types of Drawing & Printing</div>
+    </div>
+</section>
+
+<style>
+    section#services {
+        padding: 70px 0;
+        background-color: #fff;
+        text-align: center;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    section#services h2 {
+        font-size: 36px;
+        font-family: 'Playfair Display', serif;
+        color: #333;
+        margin-bottom: 50px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+
+    .services {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .service-item {
+        background: #f9f9f9;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        font-size: 18px;
+        color: #555;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .service-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .service-item:nth-child(even) {
+        background-color: #f4f4f4;
+    }
+</style>
+ <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>Phone: <a href="tel:+918105308029">+91 8105308029</a></p>
+        <p>Email: <a href="likithartsudupi@gmail.com">likithartsudupi@gmail.com</a></p>
+        
+        <!-- Google Map Embed -->
+        <div style="width: 100%; height: 400px; margin-top: 20px;">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3882.3809056798414!2d74.73898197455198!3d13.326565706997629!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbcbb1e6018fb9b%3A0x34d611ed12a6f750!2sLikitha%20Arts!5e0!3m2!1sen!2sin!4v1729081442783!5m2!1sen!2sin"
+                width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        </div>
+    </section>
+
+
+
+
+    <footer>
+        <p>© 2024 Bhaskar B Kidiyoor. All Rights Reserved.</p>
+    </footer
